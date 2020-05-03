@@ -22,7 +22,7 @@
             $results = mysqli_query($conn, $query);
             if (mysqli_num_rows($results) == 1) { 
                 $_SESSION["username"] = $username;
-                header('location: customer_home.html');
+                header('location: customer_home.php');
             }else{
                 echo "User not found, log in again.";
                 die();

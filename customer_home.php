@@ -1,5 +1,31 @@
 <!DOCTYPE html>
 <html>
+<?php
+    session_start();
+    $user = $_SESSION["username"];
+    echo $user;
+    $host = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "yeet_airlines";
+
+    $conn = new mysqli ($host, $dbuser, $dbpass, $dbname);
+
+    if(mysqli_connect_error()){
+        die('Connect Error('.mysqli_connect_errno().')'.mysqli_connect_error());
+    }else{
+        $query = "SELECT first_name, last_name, address, city, zipcode, telephone FROM customer WHERE username= '$user'";
+        $results = mysqli_query($conn, $query);
+        $row = mysqli_fetch_row($results);
+        
+        $first_name = $row[0];
+        $last_name = $row[1];
+        $address = $row[2];
+        $city = $row[3];
+        $zipcode = $row[4];
+        $telephone = $row[5];
+    }
+?>
 
 <head>
     <title> Customer Home Page </title>
@@ -31,12 +57,12 @@
 
     <div id='userInfo'>
         <ul style="list-style-type:square;">
-            <li>First Name: </li>
-            <li>Last Name: </li>
-            <li>Street Address: </li>
-            <li>City: </li>
-            <li>Zipcode: </li>
-            <li>Telephone: </li>
+            <li>First Name: <?php echo $first_name ?></li>
+            <li>Last Name: <?php echo $last_name ?></li>
+            <li>Street Address: <?php echo $address ?></li>
+            <li>City: <?php echo $city ?></li>
+            <li>Zipcode: <?php echo $zipcode ?></li>
+            <li>Telephone: <?php echo $telephone ?></li>
         </ul>
         <button onclick="hide('userInfo')">Close User Information</button> 
         <button onclick="flip('userInfo', 'userEdit')">Edit User Information</button> <br>
