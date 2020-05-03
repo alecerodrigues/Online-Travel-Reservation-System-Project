@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2020 at 03:43 AM
+-- Generation Time: May 04, 2020 at 12:14 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -52,6 +52,7 @@ CREATE TABLE `airport` (
 --
 
 CREATE TABLE `customer` (
+  `cust_id` int(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
@@ -66,8 +67,8 @@ CREATE TABLE `customer` (
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`username`, `password`, `first_name`, `last_name`, `address`, `city`, `zipcode`, `telephone`) VALUES
-('alec', 'test', 'alec', 'rodrigeus', '290 street', 'new york', 1205, 908);
+INSERT INTO `customer` (`cust_id`, `username`, `password`, `first_name`, `last_name`, `address`, `city`, `zipcode`, `telephone`) VALUES
+(1, 'alec', 'alec', 'alec', 'alec', 'alec', 'alec', 51012, 0);
 
 -- --------------------------------------------------------
 
@@ -107,6 +108,26 @@ CREATE TABLE `reservation` (
   `booking_fee` int(255) NOT NULL,
   `customer_rep` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`cust_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `cust_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
