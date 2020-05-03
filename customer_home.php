@@ -3,7 +3,6 @@
 <?php
     session_start();
     $user = $_SESSION["username"];
-    echo $user;
     $host = "localhost";
     $dbuser = "root";
     $dbpass = "";
@@ -52,7 +51,10 @@
 
 <body>
     <h1>Thank you for choosing YEET Airlines.</h1>
-
+    <p>Welcome: </p>
+    <?php
+    echo $user;
+    ?><br><br>
     <button onclick="show('userInfo')">Show User Information</button> <br></br>
 
     <div id='userInfo'>
