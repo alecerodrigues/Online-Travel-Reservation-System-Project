@@ -32,7 +32,7 @@
             $sql = "INSERT INTO customer (username,password,first_name,last_name,address,city,zipcode,telephone) 
                 values ('$username','$password','$first_name','$last_name','$address','$city','$zipcode','$telephone')";
             if($conn->query($sql)){
-                echo "New Account Added";
+                echo "New Customer Account Added. Please go back to  Log in!";
             }else{
                 echo "ERROR: ".$sql."<br>".$conn->error;
             }
