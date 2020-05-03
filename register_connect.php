@@ -1,22 +1,22 @@
 <?php
 
     $email = filter_input(INPUT_POST, 'email');
-    $pass = filter_input(INPUT_POST, 'password');
+    $pass = filter_input(INPUT_POST, 'pass');
 
     if(!empty($email)){
         if(!empty($pass)){
 
             $host = "localhost";
             $dbuser = "root";
-            $dbpass = "test";
-            $dbname = "registration_test";
+            $dbpass = "";
+            $dbname = "test";
 
             $conn = new mysqli ($host, $dbuser, $dbpass, $dbname);
 
             if(mysqli_connect_error()){
                 die('Connect Error('.mysqli_connect_errno().')'.mysqli_connect_error());
             }else{
-                $sql = "INSERT INTO test (email,pass) values ('$email, $pass)";
+                $sql = "INSERT INTO regi (email,pass) values ('$email', '$pass')";
                 if($conn->query($sql)){
                     echo "New Account Added";
                 }else{
