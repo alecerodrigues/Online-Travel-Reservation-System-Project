@@ -4,11 +4,29 @@
         <title> Customer Home Page </title>
         <style> 
         body {font-family: Arial, Helvetica, sans-serif; background-color: lightgoldenrodyellow;}
+        #userInfo {display:none;}
         </style>
     </head>
 
     <body>
       <h1>Thank you for choosing YEET Airlines.</h1>
-      
+        
+      <button onclick="show('userInfo')">Show User Information</button>
+      <div id ='userInfo'>
+        <ul style="list-style-type:square;">
+            <li>First Name: </li>
+            <li>Last Name: </li>
+            <li>Street Address: </li>
+            <li>City: </li>
+            <li>Zipcode: </li>
+            <li>Telephone: </li>
+          </ul>
+      </div>
+
+      <script>
+          function show(id) {
+            document.getElementById(id).style.display = "block";
+          }
+      </script>
     </body>
 </html>
