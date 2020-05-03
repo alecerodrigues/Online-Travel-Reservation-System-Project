@@ -5,13 +5,14 @@
         <style> 
         body {font-family: Arial, Helvetica, sans-serif; background-color: lightgoldenrodyellow;}
         #userInfo {display:none;}
+        #userEdit {display:none;}
         </style>
     </head>
 
     <body>
       <h1>Thank you for choosing YEET Airlines.</h1>
         
-      <button onclick="show('userInfo')">Show User Information</button>
+      <button onclick="show('userInfo')">Show User Information</button> <br></br>
       <div id ='userInfo'>
         <ul style="list-style-type:square;">
             <li>First Name: </li>
@@ -21,11 +22,24 @@
             <li>Zipcode: </li>
             <li>Telephone: </li>
           </ul>
+          <button onclick="flip('userInfo', 'userEdit')">Edit User Information</button>
+      </div>
+      <div id ='userEdit'>
+        First Name: <br><input type="text" name="first_name"> <br><br>
+        Last Name: <br><input type="text" name="last_name"> <br><br>
+        Street Address: <br><input type="text" name="address"> <br><br>
+        City: <br><input type="text" name="city"> <br><br>
+        Zipcode: <br><input type="number" name="zipcode"> <br><br>
+        Telephone: <br><input type="text" name="telephone"> <br><br>
       </div>
 
       <script>
           function show(id) {
             document.getElementById(id).style.display = "block";
+          }
+          function flip(a, b){
+            document.getElementById(a).style.display = "none";
+            document.getElementById(b).style.display = "block";
           }
       </script>
     </body>
