@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2020 at 03:06 AM
+-- Generation Time: May 03, 2020 at 03:43 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -52,6 +52,8 @@ CREATE TABLE `airport` (
 --
 
 CREATE TABLE `customer` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
@@ -59,6 +61,13 @@ CREATE TABLE `customer` (
   `zipcode` int(255) NOT NULL,
   `telephone` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`username`, `password`, `first_name`, `last_name`, `address`, `city`, `zipcode`, `telephone`) VALUES
+('alec', 'test', 'alec', 'rodrigeus', '290 street', 'new york', 1205, 908);
 
 -- --------------------------------------------------------
 
