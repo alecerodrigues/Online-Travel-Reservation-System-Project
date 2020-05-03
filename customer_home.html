@@ -31,6 +31,8 @@
         City: <br><input type="text" name="city"> <br><br>
         Zipcode: <br><input type="number" name="zipcode"> <br><br>
         Telephone: <br><input type="text" name="telephone"> <br><br>
+        <button>Submit</button> <!--needs functionality -->
+        <button onclick="hide('userEdit')">Close Editing Menu</button>
       </div>
 
       <script>
@@ -40,6 +42,9 @@
           function flip(a, b){
             document.getElementById(a).style.display = "none";
             document.getElementById(b).style.display = "block";
+          }
+          function hide(id) {
+            document.getElementById(id).style.display = "none";
           }
       </script>
     </body>
