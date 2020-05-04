@@ -26,6 +26,14 @@
     }
 ?>
 
+<?php
+function edit_info(){
+
+
+
+}
+?>
+
 <head>
     <title> Customer Home Page </title>
     <style>
@@ -69,18 +77,18 @@
         <button onclick="hide('userInfo')">Close User Information</button> 
         <button onclick="flip('userInfo', 'userEdit')">Edit User Information</button> <br>
     </div>
-
-    <div id='userEdit'>
-        First Name: <br><input type="text" name="first_name"> <br><br>
-        Last Name: <br><input type="text" name="last_name"> <br><br>
-        Street Address: <br><input type="text" name="address"> <br><br>
-        City: <br><input type="text" name="city"> <br><br>
-        Zipcode: <br><input type="number" name="zipcode"> <br><br>
-        Telephone: <br><input type="text" name="telephone"> <br><br>
-        <button>Submit</button>
-        <!--needs functionality -->
-        <button onclick="hide('userEdit')">Close Editing Menu</button> 
-    </div>
+    <form method="POST" action="update_info.php">
+        <div id='userEdit'>
+            First Name: <br><input type="text" name="first_name"> <br><br>
+            Last Name: <br><input type="text" name="last_name"> <br><br>
+            Street Address: <br><input type="text" name="address"> <br><br>
+            City: <br><input type="text" name="city"> <br><br>
+            Zipcode: <br><input type="number" name="zipcode"> <br><br>
+            Telephone: <br><input type="text" name="telephone"> <br><br>
+            button onclick="hide('userEdit')">Close Editing Menu</button> 
+            <input type="submit" value="Submit">
+        </div>
+    </form>
     <br>
 
     <button onclick="show('reservations')">Show All Reservations</button>
