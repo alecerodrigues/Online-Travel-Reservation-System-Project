@@ -87,7 +87,7 @@
     <button onclick="hide('reservations')">Close Reservations</button> <br></br>
 
     <div id='reservations'>
-        Active Reservations:
+        Active Reservations and Itineraries:
         <br>
         Reservation History:
     </div>
