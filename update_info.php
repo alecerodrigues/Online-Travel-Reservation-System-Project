@@ -99,7 +99,7 @@
 
 
     }else{
-        echo "Please fill a field to change.";
+        header('location: customer_home.php');
         die();
     }
 ?>

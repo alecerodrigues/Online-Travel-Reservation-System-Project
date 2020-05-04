@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2020 at 12:14 AM
+-- Generation Time: May 04, 2020 at 02:51 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -52,23 +52,23 @@ CREATE TABLE `airport` (
 --
 
 CREATE TABLE `customer` (
-  `cust_id` int(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `city` varchar(255) NOT NULL,
-  `zipcode` int(255) NOT NULL,
-  `telephone` int(255) NOT NULL
+  `zipcode` varchar(255) NOT NULL,
+  `telephone` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`cust_id`, `username`, `password`, `first_name`, `last_name`, `address`, `city`, `zipcode`, `telephone`) VALUES
-(1, 'alec', 'alec', 'alec', 'alec', 'alec', 'alec', 51012, 0);
+INSERT INTO `customer` (`username`, `password`, `first_name`, `last_name`, `address`, `city`, `zipcode`, `telephone`) VALUES
+('alec', 'alec', 'alec', 'alec', 'alec', 'alec', '51012', '0'),
+('TestAccount', 'test', 'John', 'Smith', '123 Union St', 'Piscataway', '08854', '908 535 0202');
 
 -- --------------------------------------------------------
 
@@ -117,17 +117,7 @@ CREATE TABLE `reservation` (
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
-  ADD PRIMARY KEY (`cust_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `customer`
---
-ALTER TABLE `customer`
-  MODIFY `cust_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  ADD PRIMARY KEY (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

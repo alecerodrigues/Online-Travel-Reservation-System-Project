@@ -26,14 +26,6 @@
     }
 ?>
 
-<?php
-function edit_info(){
-
-
-
-}
-?>
-
 <head>
     <title> Customer Home Page </title>
     <style>
@@ -85,7 +77,7 @@ function edit_info(){
             City: <br><input type="text" name="city"> <br><br>
             Zipcode: <br><input type="number" name="zipcode"> <br><br>
             Telephone: <br><input type="text" name="telephone"> <br><br>
-            button onclick="hide('userEdit')">Close Editing Menu</button> 
+            <button onclick="hide('userEdit')">Close Editing Menu</button> 
             <input type="submit" value="Submit">
         </div>
     </form>
