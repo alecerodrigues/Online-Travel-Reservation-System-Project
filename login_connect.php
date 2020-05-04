@@ -18,12 +18,20 @@
             die('Connect Error('.mysqli_connect_errno().')'.mysqli_connect_error());
         }else{
 
-            $query = "SELECT * FROM customer WHERE username= '$username' AND password='$password'";
-            $results = mysqli_query($conn, $query);
-            if (mysqli_num_rows($results) == 1) { 
+            $queryC = "SELECT * FROM customer WHERE username= '$username' AND password='$password'";
+            $queryM = "SELECT * FROM manager WHERE username= '$username' AND password='$password'";
+
+            $resultsC = mysqli_query($conn, $queryC);
+            $resultsM = mysqli_query($conn, $queryM);
+
+            if (mysqli_num_rows($resultsC) == 1) { 
                 $_SESSION["username"] = $username;
                 header('location: customer_home.php');
-            }else{
+            }else if(mysqli_num_rows($resultsM) == 1) { 
+                $_SESSION["username"] = $username;
+                header('location: admin_home.php');
+            }
+            else{
                 echo "User not found, log in again.";
                 die();
             }
